@@ -19,31 +19,41 @@ class Book extends React.Component {
           	{
           		book.shelf === 'currentlyReading' ? (
 	          		<select defaultValue="currentlyReading" onChange={(event) => onShelfChange(book, event.target.value)} >
-	          			<option value="none" disabled>Move to...</option>
+	          			<option disabled>Move to...</option>
 		              <option value="currentlyReading">Currently Reading</option>
 		              <option value="wantToRead">Want to Read</option>
 		              <option value="read">Read</option>
 		              <option value="none">None</option>
 		             </select>
-          		) : (
-          			book.shelf === 'wantToRead' ? (
-          			<select defaultValue="wantToRead" onChange={(event) => onShelfChange(book, event.target.value)} >
-		              <option value="none" disabled>Move to...</option>
-		              <option value="currentlyReading">Currently Reading</option>
-		              <option value="wantToRead">Want to Read</option>
-		              <option value="read">Read</option>
-		              <option value="none">None</option>
-		            </select>
-          			) : (
-          				<select defaultValue="read" onChange={(event) => onShelfChange(book, event.target.value)} >
-		              <option value="none" disabled>Move to...</option>
-		              <option value="currentlyReading">Currently Reading</option>
-		              <option value="wantToRead">Want to Read</option>
-		              <option value="read">Read</option>
-		              <option value="none">None</option>
-		            </select>
-          			)
-          		)
+	          		) : (
+	          			book.shelf === 'wantToRead' ? (
+	          			<select defaultValue="wantToRead" onChange={(event) => onShelfChange(book, event.target.value)} >
+			              <option disabled>Move to...</option>
+			              <option value="currentlyReading">Currently Reading</option>
+			              <option value="wantToRead">Want to Read</option>
+			              <option value="read">Read</option>
+			              <option value="none">None</option>
+			            </select>
+	          			) : (
+	          			book.shelf === 'read' ? (
+	          			<select defaultValue="read" onChange={(event) => onShelfChange(book, event.target.value)} >
+			              <option disabled>Move to...</option>
+			              <option value="currentlyReading">Currently Reading</option>
+			              <option value="wantToRead">Want to Read</option>
+			              <option value="read">Read</option>
+			              <option value="none">None</option>
+			            </select>
+	          			) : (
+	          			<select defaultValue="none" onChange={(event) => onShelfChange(book, event.target.value)} >
+			              <option disabled>Move to...</option>
+			              <option value="currentlyReading">Currently Reading</option>
+			              <option value="wantToRead">Want to Read</option>
+			              <option value="read">Read</option>
+			              <option value="none">None</option>
+			            </select>
+			            )
+	          		)
+	          	)
           	}
           </div>
         </div>

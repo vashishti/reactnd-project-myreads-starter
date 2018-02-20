@@ -26,18 +26,24 @@ class BooksApp extends React.Component {
   }
 
   onShelfChange = (updatedBook, shelf) => {
-    this.state.books.forEach((oldBook) => {
+    if (updatedBook.hasOwnProperty(shelf)) {
+        this.state.books.forEach((oldBook) => {
         if(oldBook.id === updatedBook.id) {
           oldBook.shelf = shelf;
         }
       }) 
-    
-    this.setState({ 
-      books: this.state.books
-    })
+    }
+    else {
+        updatedBook.shelf = shelf;
+        this.state.books.push(updatedBook);
+    }
 
+    this.setState({ 
+          books: this.state.books
+    })
     BooksAPI.update(updatedBook, shelf);
   }
+
   render() {
     const {books} =  this.state;
     return (
