@@ -13,7 +13,7 @@ class Book extends React.Component {
 		const {book, onShelfChange} = this.props;
 		return (
 			<div className="book">
-        <div className="book-top">
+        	<div className="book-top">
           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
           <div className="book-shelf-changer">
           	{

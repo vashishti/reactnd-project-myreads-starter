@@ -21,6 +21,17 @@ body, .app {
   color: white;
 }
 
+.is-loading-title {
+  padding: 10px 0;
+  background: #ff7f00;
+  text-align: center;
+}
+.is-loading-title h1 {
+  font-weight: 400;
+  margin: 0;
+  color: white;
+}
+
 .list-books-content {
   padding: 0 0 80px;
   flex: 1;
